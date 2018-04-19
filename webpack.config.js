@@ -25,6 +25,7 @@ module.exports = {
     }),
     output: {
         filename: '[name].js',
+        path: path.resolve(__dirname, './dist')
     },
     resolve: {
         // 使用绝对路径指明第三方模块存放的位置，以减少搜索步骤
@@ -58,13 +59,13 @@ module.exports = {
     plugins: [
         autoWebPlugin,
         new HtmlWebpackPlugin({
-            filename:"index.html",
-            chunks: ['base',"common","index"],
+            filename:"dustbin.html",
+            chunks: ['base',"common","dustbin"],
             template: 'template.html'
         }),
         new HtmlWebpackPlugin({
-            filename:"login.html",
-            chunks: ['base',"common","login"],
+            filename:"sortable.html",
+            chunks: ['base',"common","sortable"],
             template: 'template.html'
         }),
         // 使用HappyPack
